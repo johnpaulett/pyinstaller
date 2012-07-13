@@ -276,7 +276,7 @@ def scan_code_for_ctypes(co, instrs, i):
 
     w = []
     for bin in list(b):
-        if bin != os.path.basename(bin):
+        if bin is None or bin != os.path.basename(bin):
             b.remove(bin)
             w.append("W: ignoring %s - ctypes imports only supported using bare filenames" % (bin,))
 
